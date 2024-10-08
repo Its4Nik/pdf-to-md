@@ -21,7 +21,7 @@ volumes:
 
 *Docker run:*
 
-```bash
+```shell
 docker volume create pdf-to-md
 docker run -p 8000:8000 --name pdf-to-md --restart always -v pdf-to-md:/app/app ghcr.io/its4nik/pdf-to-md:latest
 ```
