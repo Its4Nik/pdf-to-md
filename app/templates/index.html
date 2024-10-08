@@ -1,0 +1,51 @@
+<!-- app/templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF to Markdown Converter</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <!-- Highlight.js Stylesheet for Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF to Markdown Converter</h1>
+            <div class="dark-mode-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span id="theme-label">Dark Mode</span>
+            </div>
+        </header>
+        <div id="drop-zone" class="drop-zone">
+            <p>Drag & Drop your PDF here or click to upload</p>
+            <input type="file" id="file-input" accept="application/pdf" hidden>
+        </div>
+        <div id="progress" class="progress" hidden>
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div id="output" class="output">
+            <h2>Converted Markdown</h2>
+            <!-- Markdown Preview Section -->
+            <div id="markdown-preview" class="markdown-preview"></div>
+            <h2>Converted Images</h2>
+            <div id="images"></div>
+            <button id="copy-button">Copy Markdown</button>
+        </div>
+        <div class="count">
+            <p>Files Converted: <span id="file-count">{{ total }}</span></p>
+        </div>
+    </div>
+    <!-- Marked.js for Markdown Parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <!-- Highlight.js for Syntax Highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Initialize Highlight.js -->
+    <script>hljs.highlightAll();</script>
+    <script src="/static/script.js"></script>
+</body>
+</html>

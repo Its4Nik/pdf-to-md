@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+Jinja2
+pdfplumber
+PyMuPDF
+python-multipart
+aiofiles
+jinja2
